@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-Module doc
+Module documentation
+containig a lot
+of lines
 """
 import requests
 from sys import argv
