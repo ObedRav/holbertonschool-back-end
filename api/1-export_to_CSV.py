@@ -23,7 +23,7 @@ if __name__ == '__main__':
         name = data[0]['user']['name']
 
         with open(f"{user_id}.csv", "w", encoding='utf-8') as file:
-            writer = csv.writer(file)
+            writer = csv.writer(file, quoting=csv.QUOTE_ALL)
             for task in data:
                 writer.writerow([f"{user_id}", f"{name}", f"{task['completed']}", f"{task['title']}"])
     else:
