@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     if response.status_code == 200:
         data = response.json()
-        name = data[0]['user']['name']
+        username = data[0]['user']['username']
 
         with open(f"{user_id}.csv", "w", encoding='utf-8', newline="") as file:
             writer = csv.writer(file, quoting=csv.QUOTE_ALL)
@@ -28,7 +28,7 @@ if __name__ == '__main__':
                 writer.writerow(
                     [
                         f"{user_id}",
-                        f"{name}",
+                        f"{username}",
                         f"{task['completed']}",
                         f"{task['title']}"
                     ]
