@@ -25,6 +25,13 @@ if __name__ == '__main__':
         with open(f"{user_id}.csv", "w", encoding='utf-8', newline="") as file:
             writer = csv.writer(file, quoting=csv.QUOTE_ALL)
             for task in data:
-                writer.writerow([f"{user_id}", f"{name}", f"{task['completed']}", f"{task['title']}"])
+                writer.writerow(
+                    [
+                        f"{user_id}",
+                        f"{name}",
+                        f"{task['completed']}",
+                        f"{task['title']}"
+                    ]
+                )
     else:
         print(f"Error: {response.status_code}")
