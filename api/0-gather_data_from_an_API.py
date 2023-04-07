@@ -4,9 +4,9 @@ Module documentation
 containig a lot
 of lines
 """
-import requests
-from sys import argv
 import json
+from sys import argv
+import requests
 
 if __name__ == '__main__':
     API_URL = 'https://jsonplaceholder.typicode.com'
@@ -28,11 +28,9 @@ if __name__ == '__main__':
         user_tasks_dict = json.loads(user_tasks.content)
         tasks_done = [task for task in user_tasks_dict if task.get('completed')]
 
-        first_line = \
-            f"Employee {user_name} is done with tasks\
-                ({len(tasks_done)}/{len(user_tasks_dict)}):"
+        first_line = f"Employee {user_name} is done with tasks({len(tasks_done)}/{len(user_tasks_dict)}):"
 
-        print(first_line.replace('            ', ' '))
+        print(first_line)
         for task in tasks_done:
             print('\t {}'.format(task.get('title')))
 
