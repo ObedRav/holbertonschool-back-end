@@ -11,7 +11,11 @@ if __name__ == '__main__':
     API_URL = 'https://jsonplaceholder.typicode.com'
 
     user_id = argv[1]
-    response = requests.get(f'{API_URL}/users/{user_id}/todos', params={'_expand': 'user'})
+    response = \
+        requests.get(
+            f'{API_URL}/users/{user_id}/todos',
+            params={'_expand': 'user'}
+        )
 
     if response.status_code == 200:
         data = response.json()
@@ -20,9 +24,10 @@ if __name__ == '__main__':
         num_tasks_done = len(tasks_done)
         num_tasks_total = len(data)
 
-        print(f"Employee {name} is done with tasks ({num_tasks_done}/{num_tasks_total}):")
+        first_str = f"Employee {name} is done with tasks"
+
+        print(f"{first_str}({num_tasks_done}/{num_tasks_total}):")
         for task in tasks_done:
             print(f"\t {task['title']}")
     else:
         print(f"Error: {response.status_code}")
-
