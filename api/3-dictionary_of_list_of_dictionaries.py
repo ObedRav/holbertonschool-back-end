@@ -6,7 +6,6 @@ of lines
 """
 import json
 import requests
-from sys import argv
 
 API_URL = 'https://jsonplaceholder.typicode.com'
 

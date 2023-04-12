@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-Module documentation
-containig a lot
-of lines
-"""
+"""Module documentation"""
 import csv
 import requests
 from sys import argv
